@@ -1,0 +1,15 @@
+body {
+  background-color: black
+}
+h1, li, h2, a,h3, p, label {
+  color: white;
+}
+.body{
+  text-align: center;
+}
+label.warning, h3.warning{
+  color: red;
+}
+.labels{
+  display: inline-block;
+}

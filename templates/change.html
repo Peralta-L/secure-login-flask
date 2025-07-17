@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href='/static/css/main.css' rel="stylesheet" />
+    <meta charset="UTF-8">
+    <title>Edit passcode</title>
+</head>
+<body>
+<h1>Update Password:</h1>
+<form action= "{{ url_for('change') }}" method="POST">
+    <div>
+         {% if match == False %}
+            <h3 class="warning"> Your existing user-name has not being found: </h3>
+         {% endif %}
+        <label for="passw">Insert existing password: </label>
+        <input type="text" id="passw" name="password">
+    </div>
+    <br>
+    <div>
+        {% if notification == False %}
+            <h3 class="warning"> Must contain proper form:</h3>
+        {% endif %}
+        <label for="newpassword">Insert new password: </label>
+        <input type="text" id="newpassword" name="new">
+    </div>
+    <br>
+    <input type="submit" value="submit">
+</form>
+</body>
+</html>

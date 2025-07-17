@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href='/static/css/main.css' rel="stylesheet" />
+    <meta charset="UTF-8">
+    <title>secret</title>
+</head>
+<body>
+<h3>Is it You?</h3>
+<form action="{{ url_for('pass_c')}}" method="POST">
+    {% if warning == False %}
+        <div>
+            <label class="warning">Your PassCode is Incorrect:</label>
+        </div>
+    {% endif %}
+    <img src= ../static/images/arrow.jpg alt="Arrow" width="50" height="50"/>
+    <label for="check">Insert secret passcode:</label>
+    <input type="text" id="check" name="passcode" maxlength="12" minlength="2" required>
+    <input type="submit" value="submit">
+</form>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href='/static/css/main.css' rel="stylesheet" />
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+<h1> Register: </h1>
+<b></b>
+<p>The password must have at least 1 character, 1 upper, 1 lower and 1 digit</p>
+<form action="{{ url_for('register')}}" method="POST">
+    <div>
+        {% if notification == False %}
+            <div>
+                <label class="warning">Your username has already been taken:</label>
+            </div>
+        {% endif %}
+
+        {% if passcode== False %}
+            <div>
+                <label class="warning">Your pass-code could be compromised... re-consider input</label>
+            </div>
+        {% endif %}
+
+        <img src= ../static/images/arrow.jpg alt="Arrow" width="50" height="50"/>
+        <label for="User_Name">Insert User-name:</label>
+        <input type="text" id="User_Name" name="name" maxlength="12" minlength="5" required>
+
+        <img src= ../static/images/arrow.jpg alt="Arrow" width="50" height="50"/>
+        <label for="secret">
+            <select id="opt" name="opt_secret">
+                <option>Favorite animal?</option>
+                <option>random numbers?</option>
+                <option>Favorite Movie?</option>
+                <option>favorite team?</option>
+                <option>first car?</option>
+                <option>Important date?</option>
+                <option>Mother surname?</option>
+            </select>
+        </label>
+        <input type="text" id="secret" name="second" maxlength="12"  minlength="2" required>
+    </div>
+    <br>
+    <div>
+        {% if rules == False %}
+            <div>
+                <label class="warning">Insert correct Format for the password</label>
+            </div>
+        {% endif %}
+        <img src= ../static/images/arrow.jpg alt="Arrow" width="50" height="50"/>
+        <label for="password">Insert pass-word</label>
+        <input type="text" id="password" name="passcode" minlength="12" required>
+    </div>
+    <br>
+    <input type="submit" value="submit">
+</form>
+
+<p></p>
+
+<h3><a href='http://127.0.0.1:5000'>GO BACK!</a></h3>
+</body>
+</html>
